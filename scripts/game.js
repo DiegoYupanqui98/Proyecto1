@@ -41,6 +41,7 @@ class Game {
             100 + Math.random() * 400,
             50 + Math.random() * 300);
         this.rewards.setRewards();
+        this.increaseSpeed();
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
         this.ctxGame.clearRect(0, 0, this.ctxGame.canvas.width, this.ctxGame.canvas.height)
         this.draw();
@@ -91,6 +92,10 @@ class Game {
         this.player.y = 0;
         this.enemies.playerLifes = 5;
         this.rewards.takenCoins = 0;
+    }
+
+    increaseSpeed(){
+        if(this.frameNumber % 500 === 0) this.player.moveSpeed +=0.5;
     }
 
 }

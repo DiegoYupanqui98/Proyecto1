@@ -31,6 +31,8 @@ class Player {
 
         this.jumpAF = null;
 
+        this.moveSpeed = 5;
+
         this.movements = {
             up: false,
             right: false
@@ -74,7 +76,7 @@ class Player {
             this.movements.up = false;
         }
 
-        if (this.movements.right) this.speedX = 5;
+        if (this.movements.right) this.speedX = this.moveSpeed;
         else this.speedX = 0;
 
         this.speedY += this.grav;
