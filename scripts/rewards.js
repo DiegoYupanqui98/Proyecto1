@@ -9,6 +9,7 @@ class Rewards {
         this.coinsArray = [];
         this.spriteSpeed = 10;
         this.takenCoins = 0;
+        this.coinSound = new Audio("./images/coinSound.mp3")
     }
 
     generateRewardsArray() {
@@ -73,6 +74,7 @@ class Rewards {
             ){
                 this.coinsArray.splice(this.coinsArray.indexOf(coin),1)
                 this.takenCoins++;
+                this.coinSound.play();
             }
         })
     }

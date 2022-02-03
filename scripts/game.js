@@ -11,6 +11,7 @@ class Game {
         this.coinsValue = 10;
         this.score = 0;
         this.lifes = 5;
+        this.gameOver = false;
     }
 
     start() {
@@ -66,10 +67,11 @@ class Game {
     }
 
     checkGameOver() {
-        if (this.player.x < -this.player.width || this.lifes === 0) {
+        if ((this.player.x < -this.player.width || this.lifes === 0) && !this.gameOver) {
             document.getElementById("game-over-screen").classList.toggle("hidden");
-            document.getElementById("game-").classList.toggle("hidden");
+           // document.getElementById("game-general").classList.toggle("hidden");
             document.querySelector(".game-container").classList.toggle("hidden");
+            this.gameOver = true;
         }
     }
 
@@ -83,5 +85,12 @@ class Game {
         this.ctxGame.fillText(`Score: ${this.score}  Lifes: ${this.lifes}`, 50, 50)
     }
 
+    restart(){
+        this.gameOver = false;
+        this.player.x = this.ctxGame.width/2;
+        this.player.y = 0;
+        this.enemies.playerLifes = 5;
+        this.rewards.takenCoins = 0;
+    }
 
 }

@@ -40,7 +40,8 @@ startBtn.addEventListener("click", () => {
 })
 
 retryBtn.onclick = () => {
-    game.start();
+    location.reload();
+    //game.restart();
 }
 
 document.addEventListener('keydown', (e) => {
