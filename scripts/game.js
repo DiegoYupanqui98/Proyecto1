@@ -95,7 +95,7 @@ class Game {
     }
 
     increaseSpeed(){
-        if(this.frameNumber % 500 === 0) this.player.moveSpeed +=0.5;
+        if(this.frameNumber % 500 === 0) this.player.moveSpeed +=1;
     }
 
 }
